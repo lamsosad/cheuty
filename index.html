@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ứng dụng vui</title>
+</head>
+<body onload="body()" style="text-align: center">
+<h2>FAKING TEXTAREA</h2>
+<form>
+    <label>
+        <textarea id="text"
+                  style="height: 200px; width: 500px; text-align: center; background-color: plum; color: darkblue; font-size: xxx-large"></textarea>
+    </label>
+</form>
+</body>
+<script>
+    let arr = [];
+    let strArr = "Bạn là một thằng ngu!!! Nên là ngu ít thui! hihi (^o^)...";
+    arr = strArr.split('');
+    let str = "";
+
+    function body() {
+        let inp = document.getElementById('text').value;
+        for (let i = 0; i < inp.length; i++) {
+            str = str + arr[i];
+            if (i == strArr.length) {
+                str = "";
+            }
+        }
+        document.getElementById('text').value = str;
+        str = "";
+        setTimeout(body);
+    }
+</script>
+</html>
